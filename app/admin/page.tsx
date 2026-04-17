@@ -87,7 +87,10 @@ export default function AdminDashboard() {
                 <div key={i} className="flex gap-4 text-sm border-l-2 border-blue-500 pl-4 py-1">
                   <div>
                     <p className="font-medium">{event.type}</p>
-                    <p className="text-gray-500 text-xs">{new Date(event.created_at).toLocaleTimeString()}</p>
+                    <div className="flex gap-2 items-center">
+                      <p className="text-gray-500 text-xs">{new Date(event.created_at).toLocaleTimeString()}</p>
+                      <span className="text-[10px] bg-gray-800 text-gray-500 px-1.5 py-0.5 rounded">IP Masked</span>
+                    </div>
                   </div>
                 </div>
               )) : (
