@@ -2,7 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Contributors Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-[![Sponsor Opsly](https://img.shields.io/badge/Sponsor-Opsly-ea4aaa.svg)](#sponsors)
+![Sponsor Opsly](https://img.shields.io/badge/Sponsor-Opsly-ea4aaa.svg)
 
 **Run your team, projects, and operations in one simple dashboard.**
 
