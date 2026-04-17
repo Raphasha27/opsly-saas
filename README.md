@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="./logo.jpg" alt="Kirov Dynamics Technology Logo" width="400"/>
-</p>
-
 # Opsly SaaS
+
+![Opsly Logo](./logo.jpg)
 
 **Run your team, projects, and operations in one simple dashboard.**
 
@@ -13,6 +11,7 @@ Opsly is a lightweight Business Operations OS built by Kirov Dynamics. It helps 
 This is a Next.js App Router project configured for easy deployment on [Vercel](https://vercel.com).
 
 ## Next Steps for Production
+
 - Connect Supabase for User Auth & Database
 - Connect Stripe for Billing
 - Add Viral Invite System
