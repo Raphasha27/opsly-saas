@@ -1,6 +1,5 @@
-# Opsly SaaS
-
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRaphasha27%2Fopsly-saas)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=Raphasha27/opsly-saas)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Contributors Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![Sponsor Opsly](https://img.shields.io/badge/Sponsor-Opsly-ea4aaa.svg)
