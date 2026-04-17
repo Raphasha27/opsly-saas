@@ -1,7 +1,5 @@
 # Opsly SaaS
 
-![Opsly Logo](./logo.jpg)
-
 **Run your team, projects, and operations in one simple dashboard.**
 
 Opsly is a lightweight Business Operations OS built by Kirov Dynamics. It helps early-stage teams manage users, internal workflows, and basic business operations without juggling multiple tools.

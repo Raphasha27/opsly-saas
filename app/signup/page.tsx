@@ -2,21 +2,30 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
 
 export default function Signup() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMsg("");
     
-    // Abstracting Supabase Auth mapping here 
-    console.log("Mocking Supabase Auth for:", email);
-    localStorage.setItem("opsly_user", "real-user-jwt-mock");
-    localStorage.setItem("opsly_user_email", email);
+    // Secure Supabase Implementation replacing previous localStorage mockup
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      setErrorMsg(error.message);
+      return;
+    }
     
-    // Let's assume hitting the workspace creation automatically
+    // Auth complete -> proceed to secure dashboard
     router.push("/dashboard");
   };
 
@@ -25,6 +34,8 @@ export default function Signup() {
       <div className="bg-[#111827] p-8 rounded-xl shadow-lg w-full max-w-md">
         <h1 className="text-3xl font-bold mb-2">Create Workspace</h1>
         <p className="text-gray-400 mb-6 font-medium text-sm">Join Opsly to start running your operations seamlessly.</p>
+
+        {errorMsg && <p className="text-red-500 mb-4 text-sm">{errorMsg}</p>}
 
         <form onSubmit={handleSignup} className="flex flex-col gap-4">
           <input 
