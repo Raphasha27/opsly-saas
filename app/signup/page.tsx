@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import { getSafeAuth } from "@/lib/supabase";
 
 export default function Signup() {
   const router = useRouter();
@@ -14,8 +14,9 @@ export default function Signup() {
     e.preventDefault();
     setErrorMsg("");
     
-    // Secure Supabase Implementation replacing previous localStorage mockup
-    const { data, error } = await supabase.auth.signUp({
+    // Secure Supabase Implementation with Mock Fallback for local testing
+    const auth = getSafeAuth();
+    const { data, error } = await auth.signUp({
       email,
       password,
     });
@@ -61,6 +62,20 @@ export default function Signup() {
             Sign Up & Initialize
           </button>
         </form>
+
+        <div className="mt-6 pt-6 border-t border-gray-800">
+          <button
+            onClick={() => {
+              setEmail("demo@opsly.io");
+              setPassword("OpslyDemo123!");
+              // Note: This won't auto-submit since handleSignup is attached to form submit
+              // But it fills the fields for quick testing
+            }}
+            className="w-full text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
+          >
+            Use Demo Credentials for Testing
+          </button>
+        </div>
       </div>
     </div>
   );

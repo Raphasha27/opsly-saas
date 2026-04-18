@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { getSafeAuth, getSafeDB } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 
 export default function AdminDashboard() {
@@ -18,19 +18,20 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchAnalytics = async () => {
       // Security Check: You'd normally verify admin role here
-      const { data: { user } } = await supabase.auth.getUser();
+      const auth = getSafeAuth();
+      const db = getSafeDB();
+      const { data: { user } } = await auth.getUser();
       if (!user) {
         router.push("/signup");
         return;
       }
 
-      // Aggregate data from Supabase
-      // In a real app, you'd use a Postgres Function or Edge Function for speed
-      const { count: usersCount } = await supabase.from("profiles").select("*", { count: "exact", head: true });
-      const { count: orgsCount } = await supabase.from("organizations").select("*", { count: "exact", head: true });
-      const { count: invitesCount } = await supabase.from("invites").select("*", { count: "exact", head: true });
+      // Aggregate data from Supabase/Mock
+      const { count: usersCount } = await db.from("profiles").select("*", { count: "exact", head: true });
+      const { count: orgsCount } = await db.from("organizations").select("*", { count: "exact", head: true });
+      const { count: invitesCount } = await db.from("invites").select("*", { count: "exact", head: true });
       
-      const { data: events } = await supabase
+      const { data: events } = await db
         .from("activities")
         .select("*")
         .order("created_at", { ascending: false })
