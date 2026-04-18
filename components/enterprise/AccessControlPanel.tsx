@@ -13,9 +13,11 @@ export default function AccessControlPanel() {
         <Row label="Access Violations" value="0" color="text-green-400" />
       </div>
 
-      <button className="mt-6 w-full bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg shadow-blue-500/20 active:scale-95">
-        Review Access Policies
-      </button>
+      <a href="/admin" className="block w-full">
+        <button className="mt-6 w-full bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg shadow-blue-500/20 active:scale-95">
+          Review Access Policies
+        </button>
+      </a>
     </div>
   );
 }
