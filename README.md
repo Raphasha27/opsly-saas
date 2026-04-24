@@ -8,6 +8,7 @@
 ---
 
 ## 🏛️ Architecture Overview
+
 Opsly is architected for scalability and reliability, bridging a high-performance Next.js frontend with a resilient FastAPI intelligence layer.
 
 ```mermaid
@@ -21,6 +22,7 @@ graph TD
 ```
 
 ## 🚀 Key Capabilities
+
 | Capability | Sentinel Feature | Tech Stack |
 | :--- | :--- | :--- |
 | **Risk Scoring** | Real-time anomaly detection & threat scoring. | Python / Scikit-Learn |
@@ -29,12 +31,16 @@ graph TD
 | **Mock Fallback** | Resilient UI that works without DB connection. | Client-side State |
 
 ## 🛠️ Intelligence Suite: Kirov Risk Engine
+
 Opsly features a built-in **Risk & Anomaly Engine** that monitors operational metrics to detect suspicious activity:
+
 - **Anomaly Detection**: Uses `IsolationForest` to identify outliers in login frequency and data transfer.
 - **Predictive Scoring**: Heuristic-ML hybrid that calculates real-time risk percentages for every user action.
 
 ## 🚦 Deployment
+
 Opsly is production-ready and optimized for zero-cost deployment via the Kirov Sovereign Stack:
+
 - **Frontend**: Vercel (Free Tier)
 - **Database/Auth**: Supabase (Free Tier)
 - **AI Services**: Render / Railway (Free Tier)
