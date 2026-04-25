@@ -1,4 +1,4 @@
-name: CI
+﻿name: CI
 
 on:
   push:
@@ -19,21 +19,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-
       - name: Install dependencies
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install; fi
-
       - name: Lint
-        run: npm run lint --if-present || echo "No lint script configured"
-
+        run: npm run lint --if-present || echo "No lint script"
       - name: Build
-        run: npm run build --if-present || echo "No build script configured"
-
+        run: npm run build --if-present || echo "No build script"
       - name: Test
-        run: npm test --if-present -- --watchAll=false 2>/dev/null || echo "No test script configured"
+        run: npm test --if-present -- --watchAll=false 2>/dev/null || echo "No test script"
