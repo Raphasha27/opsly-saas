@@ -2,14 +2,21 @@
 
 *Run your team, projects, and operations in one unified, high-integrity dashboard.*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Live_Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://opsly-saas.vercel.app)
-[![Sovereign AI](https://img.shields.io/badge/Intelligence-Kirov_Risk_Engine-00aaff?style=for-the-badge&logo=googlegemini)](https://github.com/Raphasha27/opsly-saas)
+[![CI](https://github.com/Raphasha27/opsly-saas/actions/workflows/ci.yml/badge.svg)](https://github.com/Raphasha27/opsly-saas/actions)
+[![CodeQL](https://github.com/Raphasha27/opsly-saas/actions/workflows/codeql.yml/badge.svg)](https://github.com/Raphasha27/opsly-saas/actions)
+[![Status: Engineering](https://img.shields.io/badge/Status-Engineering-blue?style=for-the-badge&labelColor=0d1117)](https://github.com/Raphasha27/opsly-saas)
 
 ---
 
 ## 🏛️ Architecture Overview
 
 Opsly is architected for scalability and reliability, bridging a high-performance Next.js frontend with a resilient FastAPI intelligence layer.
+
+### How it Works (The Process)
+
+1. **The Intelligence Layer (FastAPI)**: Opsly utilizes the **Kirov Risk Engine**, a Python-powered analytical core that processes operational data to identify bottlenecks and security anomalies.
+2. **The High-Integrity Frontend (Next.js 14)**: A glassmorphic UI provides real-time visibility into system health, project timelines, and team performance metrics.
+3. **Data Flow**: Information moves from local data sources into the Risk Engine, where it is normalized, scored, and then piped to the dashboard for human-centric decision-making.
 
 ```mermaid
 graph TD
