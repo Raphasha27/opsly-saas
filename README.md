@@ -1,56 +1,110 @@
-# 🏛️ Opsly SaaS: Enterprise Operations OS
+# 🏛️ Opsly SaaS — Enterprise Operations OS
 
-*Run your team, projects, and operations in one unified, high-integrity dashboard.*
+> **Future Project · Seeking Contributors & Funding**
+
+![Opsly Banner](https://capsule-render.vercel.app/api?type=waving&color=0:003366,50:0077cc,100:0d1117&height=180&section=header&text=Opsly%20SaaS&fontSize=55&fontColor=ffffff&fontAlignY=38&desc=Enterprise%20Operations%20Intelligence&descAlignY=58&animation=fadeIn)
 
 [![CI](https://github.com/Raphasha27/opsly-saas/actions/workflows/ci.yml/badge.svg)](https://github.com/Raphasha27/opsly-saas/actions)
 [![CodeQL](https://github.com/Raphasha27/opsly-saas/actions/workflows/codeql.yml/badge.svg)](https://github.com/Raphasha27/opsly-saas/actions)
-[![Status: Engineering](https://img.shields.io/badge/Status-Engineering-blue?style=for-the-badge&labelColor=0d1117)](https://github.com/Raphasha27/opsly-saas)
+[![Status](https://img.shields.io/badge/Status-Seeking%20Contributors-FFD700?style=for-the-badge&labelColor=0d1117)](https://github.com/Raphasha27/opsly-saas)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&labelColor=0d1117)](./LICENSE)
 
 ---
 
-## 🏛️ Architecture Overview
+## 🚀 Vision
 
-Opsly is architected for scalability and reliability, bridging a high-performance Next.js frontend with a resilient FastAPI intelligence layer.
+**Opsly SaaS** is a next-generation enterprise operations platform designed to give teams total visibility over projects, resources, and risks — all in a single, AI-powered dashboard.
 
-### How it Works (The Process)
+This project is **actively developed** and **open to contributors, collaborators, and early-stage investors** who see the potential in intelligent business infrastructure for African and global SMEs.
 
-1. **The Intelligence Layer (FastAPI)**: Opsly utilizes the **Kirov Risk Engine**, a Python-powered analytical core that processes operational data to identify bottlenecks and security anomalies.
-2. **The High-Integrity Frontend (Next.js 14)**: A glassmorphic UI provides real-time visibility into system health, project timelines, and team performance metrics.
-3. **Data Flow**: Information moves from local data sources into the Risk Engine, where it is normalized, scored, and then piped to the dashboard for human-centric decision-making.
+---
+
+## 🧠 What It Does
+
+| Feature | Description |
+| :--- | :--- |
+| **Kirov Risk Engine** | AI-powered anomaly detection that flags project health risks in real time |
+| **Operations Dashboard** | Executive-grade glassmorphic UI for monitoring teams and milestones |
+| **Task Intelligence** | Automated workload distribution and bottleneck forecasting |
+| **Audit Trails** | Immutable activity logs with integrity verification |
+| **Role-Based Access** | Fine-grained permissions for enterprise security |
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | Next.js 14, TypeScript, Tailwind CSS |
+| **AI/ML Backend** | FastAPI (Python), Scikit-Learn, Pandas |
+| **Database** | Supabase (PostgreSQL) |
+| **Auth** | Supabase Auth / NextAuth.js |
+| **CI/CD** | GitHub Actions |
+| **Planned Deployment** | Vercel (frontend) + Render (FastAPI backend) |
+
+> ⚠️ **Deployment Note:** This project is not yet deployed to avoid billing risk during development. When ready, the frontend will be hosted on **Vercel** and the intelligence API on **Render** (free tier).
+
+---
+
+## 🏗️ Architecture
 
 ```mermaid
 graph TD
-    User((Executive/Admin)) -->|Manages Ops| Portal[Next.js Enterprise Portal]
-    Portal -->|Operational Data| RiskEngine[FastAPI Risk & Anomaly Engine]
-    RiskEngine -->|Statistical Scoring| ML[IsolationForest - Scikit-Learn]
-    Portal -->|Persistence| DB[(Supabase / PostgreSQL)]
-    Portal -->|Payments| Stripe[Stripe API]
-    RiskEngine -->|Real-time Alerts| Portal
+    User((Executive / Admin)) -->|Manages Ops| Portal[Next.js Enterprise Portal]
+    Portal -->|API Calls| API[FastAPI Risk Intelligence]
+    API -->|Reads / Writes| DB[(Supabase PostgreSQL)]
+    API -->|Runs Models| Engine[Kirov Risk Engine]
+    Engine -->|Anomaly Scores| Portal
+    Portal -->|Displays| Dashboard[Glassmorphic Dashboard UI]
 ```
 
-## 🚀 Key Capabilities
+---
 
-| Capability | Sentinel Feature | Tech Stack |
-| :--- | :--- | :--- |
-| **Risk Scoring** | Real-time anomaly detection & threat scoring. | Python / Scikit-Learn |
-| **Org Management** | Multi-tenant governance for scaling teams. | Next.js / Supabase |
-| **Audit Logs** | High-fidelity logging of all system actions. | Kirov Audit Logic |
-| **Mock Fallback** | Resilient UI that works without DB connection. | Client-side State |
+## 🧪 How to Run Locally
 
-## 🛠️ Intelligence Suite: Kirov Risk Engine
+```bash
+# 1. Clone the repository
+git clone https://github.com/Raphasha27/opsly-saas.git
+cd opsly-saas
 
-Opsly features a built-in **Risk & Anomaly Engine** that monitors operational metrics to detect suspicious activity:
+# 2. Install frontend dependencies
+npm install
 
-- **Anomaly Detection**: Uses `IsolationForest` to identify outliers in login frequency and data transfer.
-- **Predictive Scoring**: Heuristic-ML hybrid that calculates real-time risk percentages for every user action.
+# 3. Copy environment variables
+cp .env.example .env.local
+# Fill in your Supabase URL and Anon Key
 
-## 🚦 Deployment
+# 4. Start the Next.js development server
+npm run dev
+# Open http://localhost:3000
 
-Opsly is production-ready and optimized for zero-cost deployment via the Kirov Sovereign Stack:
-
-- **Frontend**: Vercel (Free Tier)
-- **Database/Auth**: Supabase (Free Tier)
-- **AI Services**: Render / Railway (Free Tier)
+# 5. (Optional) Start the FastAPI intelligence backend
+cd api
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
 
 ---
-© 2026 Kirov Dynamics Technology · Built for Professional Scale.
+
+## 🤝 Contributing
+
+This project welcomes contributors across all skill levels:
+
+- 🎨 **Frontend Developers** — Improve the dashboard UI/UX
+- 🤖 **ML Engineers** — Enhance the Risk Engine models
+- 🔐 **Security Specialists** — Harden authentication and audit systems
+- 📝 **Technical Writers** — Improve documentation
+
+**To contribute:** Fork the repo → Create a branch → Submit a PR.
+
+---
+
+## 💡 Funding & Collaboration
+
+> This project is part of the **Kirov Dynamics Technology** ecosystem — an African-owned engineering initiative building sovereign digital infrastructure for the continent.
+>
+> If you see potential here, reach out via the [Kirov Dynamics Portfolio](https://portfolio-react-zeta-black-48.vercel.app/).
+
+---
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:003366,100:0077cc&height=100&section=footer)
