@@ -1,12 +1,9 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "name": "opsly-saas",
   "cleanUrls": true,
   "trailingSlash": false,
-  "framework": "nextjs"
-}
-=======
+  "framework": "nextjs",
   "builds": [
     {
       "src": "package.json",
@@ -14,4 +11,3 @@
     }
   ]
 }
->>>>>>> origin/master
